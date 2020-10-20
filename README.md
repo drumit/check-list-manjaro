@@ -405,8 +405,9 @@ sudo kill kdewallet
 ```
 ### 32.5 (pacman compression)
 ### 32.6 (swap+swapiness)
-``` 1. sudo nano /etc/sysctl.d/99-swappiness.conf
-    2. vm.swappiness=10
+``` 
+1. sudo nano /etc/sysctl.d/99-swappiness.conf
+2. vm.swappiness=10
 ```
 ### 32.7 (проверить правила в PoliceKit) Veyon и Timeshift. (при обновлении ос, всегда делать срез таймшифтом, с указанием даты среза).
 
