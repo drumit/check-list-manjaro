@@ -1,5 +1,5 @@
 # check-list-manjaro
-# Скачивание Manjaro Linux KDE Minimal
+## Скачивание Manjaro Linux KDE Minimal
 
 ## 1. Запись установочного ISO на USB накопитель с помощью Rufus
 ## 2. Установка
