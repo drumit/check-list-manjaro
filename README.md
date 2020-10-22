@@ -42,7 +42,7 @@ cd awesome-linux-config/manjaro19/basic/
 ## 8. Перезагружаем ПК
 ## 9.	Понижаем версию ядра до текущей LTS версии
 ```
-sudo mhwd-kernel –I linux54 в данный момент 5.4 ядро LTS
+sudo mhwd-kernel –I linux-lts
 ```
 ### 9.1 Перезагружаем систему
 ### 9.2 В процессе перезагрузки жмём Esc 
