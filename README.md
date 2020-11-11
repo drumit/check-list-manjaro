@@ -20,7 +20,7 @@ sudo trust extract-compat
 ```
 ## 5.   Устанавливаем yay и обновляем OS
 ```
-sudo pacman –Syyuu yay
+sudo pacman -Syyuu yay
 yay -Syyuu --nodiffmenu --nocleanmenu --noconfirm
 ```
 
@@ -404,6 +404,14 @@ sudo nano
 sudo kill kdewallet 
 ```
 ### 32.5 (pacman compression)
+```
+sudo nano /etc/makepkg.conf
+Заменяем
+compressxz=(xz -c -z - --threads=0)
+compressgz=(pigz -c -f -n)
+compressbz2=(pbzip2 -c -f)
+compresszst=(zstd -c -z -q - --threads=0)
+```
 ### 32.6 (swap+swapiness)
 ``` 
 1. sudo nano /etc/sysctl.d/99-swappiness.conf
