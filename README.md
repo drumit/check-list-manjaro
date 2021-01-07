@@ -66,16 +66,19 @@ date
 ```
 ## 14.	Конфигурируем систему.
 ### 14.1 Настройка времени
-> sudo nano /etc/ntp.conf  
-###### Меняем IP и FQDN адреса NTP серверов на требуемые локальные
-```
-server 192.168.*.* 
-server 192.168.*.*
-server dc.server.com 
-server dc1.server.com 
-```
+Проверяем статус службы ntpd (не должна быть запущена
+Проверяем статус службы systemd-timesyncd (должна быть запущена и заэнэйблена)
+Проверяем конфиг службы systemd-timesyncd /etc/systemd/timesyncd.conf
+В разделе 
+[Time]
+NTP=0.arch.pool.ntp.org 1.arch.pool.ntp.org 2.arch.pool.ntp.org 3.arch.pool.ntp.org
+FallbackNTP=0.pool.ntp.org 1.pool.ntp.org 0.fr.pool.ntp.org
+Меняем сервера на свои, затем перезапускаем службу
+Проверяем
+timedatectl show-timesync --all
+timedatectl set-ntp true 
+timedatectl timesync-status
 
-> sudo ntpd server 192.168.*.*
 
 ### 14.2 Настройка krb5 (изменить дефолтные значения на требуемые)
 
