@@ -66,6 +66,7 @@ date
 ```
 ## 14.	Конфигурируем систему.
 ### 14.1 Настройка времени
+```
 Проверяем статус службы ntpd (не должна быть запущена
 Проверяем статус службы systemd-timesyncd (должна быть запущена и заэнэйблена)
 Проверяем конфиг службы systemd-timesyncd /etc/systemd/timesyncd.conf
@@ -78,7 +79,7 @@ FallbackNTP=0.pool.ntp.org 1.pool.ntp.org 0.fr.pool.ntp.org
 timedatectl show-timesync --all
 timedatectl set-ntp true 
 timedatectl timesync-status
-
+```
 
 ### 14.2 Настройка krb5 (изменить дефолтные значения на требуемые)
 
