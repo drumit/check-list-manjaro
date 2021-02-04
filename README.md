@@ -1,7 +1,7 @@
 # check-list-manjaro
 ## Downloading  Manjaro Linux KDE Minimal
 
-# ATTENTION! NEVER DO NOT WORKING FROM ROOT!
+# ATTENTION!  Do not work as root
 
 ## 1. Burning the installation ISO to the USB storage device with Rufus
 ## 2. Installation
