@@ -5,25 +5,27 @@
 ## 2. Installation
 ### 2.1 Set the username and password 
 ### 2.2 Set hostname
+```
 ###### (hostname is compilation from 2 letters country name, + mac address pc)
 ###### The MAC address you'll see in the console (F12) with command ip addr | grep -E ether
 ###### Also choose a time zone (command in terminal tzselect)
+```
 ## 3.	Preparing remote access to the machine
 ```
-> sudo systemctl start sshd
-> sudo systemctl status sshd
-> sudo systemctl enable sshd
+sudo systemctl start sshd
+sudo systemctl status sshd
+sudo systemctl enable sshd
 ```
 
 ## 4.	Adding the network certificate to the desktop (with help USB, or SCP, for Linux remote system, or WinSCP for Windows remote system)
 ```
-> sudo cp certificatename.crt /etc/ca-certificates/trust-source/anchors/
-> sudo trust extract-compat
+sudo cp certificatename.crt /etc/ca-certificates/trust-source/anchors/
+sudo trust extract-compat
 ```
 ## 5.   Installing  yay and updating OS
 ```
-> sudo pacman -Syyuu yay
-> yay -Syyuu --nodiffmenu --nocleanmenu --noconfirm
+sudo pacman -Syyuu yay
+yay -Syyuu --nodiffmenu --nocleanmenu --noconfirm
 ```
 ## 6 Downloading software for users from Alliedium project repository
 
@@ -72,12 +74,12 @@ Removing the newer kernel
 
 ## 12. Configuring the system.
 ### 12.1 Check and correct time settings
-
-> sudo systemctl status ntpd 
-> sudo systemctl status systemd-timesyncd 
-> sudo systemctl start systemd-timesync 
-> sudo systemctl enable systemd-timesync 
-
+```
+sudo systemctl status ntpd 
+sudo systemctl status systemd-timesyncd 
+sudo systemctl start systemd-timesync 
+sudo systemctl enable systemd-timesync 
+```
 ## 12.1.1 Change servers to our local time servers, then restart the service
 > sudo nano /etc/systemd/timesyncd.conf
 ```
@@ -86,11 +88,11 @@ NTP=0.arch.pool.ntp.org 1.arch.pool.ntp.org 2.arch.pool.ntp.org 3.arch.pool.ntp.
 FallbackNTP=0.pool.ntp.org 1.pool.ntp.org 0.fr.pool.ntp.org
 ```
 ## 12.1.2 Checking time settings
-
-> timedatectl show-timesync --all
-> timedatectl set-ntp true 
-> timedatectl timesync-status
-
+```
+ timedatectl show-timesync --all
+ timedatectl set-ntp true 
+ timedatectl timesync-status
+```
 ### 12.2 Customization krb5 (change the default values to the required ones)
 
 > sudo nano /etc/krb5.conf
@@ -203,11 +205,11 @@ FallbackNTP=0.pool.ntp.org 1.pool.ntp.org 0.fr.pool.ntp.org
 (In the first three parameters passwd, group, shadow add winbind after files separated by a space)
 ```
 ### 12.5 Blocking USB 
-
-> sudo systemctl start usbguard
-> sudo systemctl status usbguard
-> sudo systemctl enable usbguard
-
+```
+sudo systemctl start usbguard
+sudo systemctl status usbguard
+sudo systemctl enable usbguard
+```
 ### 12.6 Customization samba (replace default values)
 > sudo nano /etc/samba/smb.conf 
 ```
@@ -263,11 +265,11 @@ We delete all references to IPv6 and write the fully qualified domain name of th
 [127.0.0.1] [pc.domain.com pc]
 
 ## 16 Checking the status of services smb, nmb and winbindd
-
-> sudo systemctl status smb
-> sudo systemctl status nmb
-> sudo systemctl status winbind
-
+```
+sudo systemctl status smb
+sudo systemctl status nmb
+sudo systemctl status winbind
+```
 Reboot PC
 ## 17 sudo nano /etc/pam.d/system-auth
 ```
