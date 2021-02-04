@@ -9,10 +9,11 @@
 ###### The MAC address you'll see in the console (F12) with command ip addr | grep -E ether
 ###### Also choose a time zone (command in terminal tzselect)
 ## 3.	Preparing remote access to the machine
-
+```
 > sudo systemctl start sshd
 > sudo systemctl status sshd
 > sudo systemctl enable sshd
+```
 
 ## 4.	Adding the network certificate to the desktop (with help USB, or SCP, for Linux remote system, or WinSCP for Windows remote system)
 
