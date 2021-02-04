@@ -7,14 +7,14 @@
 ### 2.2 Set hostname
 ###### (hostname is compilation from 2 letters country name, + mac address pc)
 ###### The MAC address you'll see in the console (F12) with command ip addr | grep -E ether
-###### Also choose a time zone (Chisinau)
+###### Also choose a time zone (command in terminal tzselect)
 ## 3.	Preparing remote access to the machine
 
 > sudo systemctl start sshd
-> sudo systemctl status sshd (Проверяем статус службы)
+> sudo systemctl status sshd
 > sudo systemctl enable sshd
 
-## 4.	Adding the network certificate to the desktop (with help WinSCP for future work)
+## 4.	Adding the network certificate to the desktop (with help USB, or SCP, for Linux remote system, or WinSCP for Windows remote system)
 
 > sudo cp certificatename.crt /etc/ca-certificates/trust-source/anchors/
 > sudo trust extract-compat
