@@ -16,15 +16,15 @@
 ```
 
 ## 4.	Adding the network certificate to the desktop (with help USB, or SCP, for Linux remote system, or WinSCP for Windows remote system)
-
+```
 > sudo cp certificatename.crt /etc/ca-certificates/trust-source/anchors/
 > sudo trust extract-compat
-
+```
 ## 5.   Installing  yay and updating OS
-
+```
 > sudo pacman -Syyuu yay
 > yay -Syyuu --nodiffmenu --nocleanmenu --noconfirm
-
+```
 ## 6 Downloading software for users from Alliedium project repository
 
 ### 6.1 Cloning the repository
