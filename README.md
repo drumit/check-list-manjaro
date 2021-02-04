@@ -85,7 +85,9 @@ sudo systemctl enable systemd-timesync
 ```
 ## 11.1.1 Change servers to our local time servers, then restart the service
 > sudo nano /etc/systemd/timesyncd.conf
+```
 (ntp server -  is your domain controller server. To find domain controller IP execute the command bellow: 
+```
 > grep "nameserver" /etc/resolv.conf
 ```
 [Time]
