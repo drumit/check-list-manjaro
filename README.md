@@ -84,15 +84,20 @@ sudo systemctl start systemd-timesync
 sudo systemctl enable systemd-timesync 
 ```
 ## 11.1.1 Change servers to our local time servers, then restart the service
-> sudo nano /etc/systemd/timesyncd.conf
+Determine ntp servers
 ```
 (ntp server -  is your domain controller server. To find domain controller IP execute the command bellow: 
 ```
 > grep "nameserver" /etc/resolv.conf
+
+Then go to the time service config
+> sudo nano /etc/systemd/timesyncd.conf
+
+Change the default addresses to  our local NTP addresses (found above)
 ```
 [Time]
-NTP=0.arch.pool.ntp.org 1.arch.pool.ntp.org 2.arch.pool.ntp.org 3.arch.pool.ntp.org
-FallbackNTP=0.pool.ntp.org 1.pool.ntp.org 0.fr.pool.ntp.org
+NTP=0.arch.pool.ntp.org 
+FallbackNTP=1.pool.ntp.org 
 ```
 ## 11.1.2 Checking time settings
 ```
@@ -320,7 +325,7 @@ klist
 
 Reboot PC
 ## 21 Starting services and adding to startup
-
+```
 > sudo systemctl start smb
 > sudo systemctl start nmb
 > sudo systemctl start winbind
@@ -330,6 +335,7 @@ Reboot PC
 > sudo systemctl enable smb
 > sudo systemctl enable nmb
 > sudo systemctl enable winbind
+```
 
 ## 22 Downloading x11vnc
 
@@ -372,13 +378,14 @@ Alias=default.target
 > x11vnc --storepasswd  /etc/x11vnc.passwd
 
 ## 26 Changing Desktop Manager
-
+```
 > sudo pacman -R sddm-kcm
 > sudo pacman –R sddm
 > sudo systemctl disable sddm
 > sudo pacman –S lxdm
 > sudo systemctl start lxdm
 > sudo systemctl enable lxdm
+```
 
 ## 27 FIX TROUBLES
 ## 27.1.1 Solving keyboard problems, in VNC - create fix.sh on your Desktop
