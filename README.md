@@ -1,6 +1,8 @@
 # check-list-manjaro
 ## Downloading  Manjaro Linux KDE Minimal
 
+# ATTENTION! NEVER DO NOT WORKING FROM ROOT!
+
 ## 1. Burning the installation ISO to the USB storage device with Rufus
 ## 2. Installation
 ### 2.1 Set the username and password 
@@ -37,14 +39,16 @@ yay -Syyuu --nodiffmenu --nocleanmenu --noconfirm
 
 > cd awesome-linux-config/manjaro/basic/
 
-### 6.3 Running the system-wide installation scripts.
+### 6.3 Running the system-wide installation scripts from sudousers member (but not root).
 
 > ./install_all.sh
 
 ## 7. Change directory to the sysadmin folder and follow the instructions from her.
-
-> cd sysadmin
-
+```
+cd awesome-linux-config/manjaro/basic/sysadmin
+./change_to_zsh.sh
+cat checlist.md (and follow instructions)
+```
  Reboot PC
 ## 8. Downgrading the kernel version (sic!) to the current LTS version
 
@@ -59,7 +63,7 @@ Removing the newer kernel
 
 > sudo mhwd-kernel –r linux
 
-## 9. Checking for system updates
+## 9. Install system updates
 
 > yay -Syyuu --nodiffmenu --nocleanmenu --noconfirm
 
@@ -68,26 +72,27 @@ Removing the newer kernel
 > sudo pacman -S  krb5 sssd usbguard pam-krb5
 
  Reboot PC
-## 11.	Checking current time
+## 11.	Checking current time && configuring time services on the system.
 
-> date
-
-## 12. Configuring the system.
-### 12.1 Check and correct time settings
+> timedatectl
+ 
+### 11.1 Check and correct time settings
 ```
-sudo systemctl status ntpd 
+sudo systemctl status ntpd (must be dead)
 sudo systemctl status systemd-timesyncd 
 sudo systemctl start systemd-timesync 
 sudo systemctl enable systemd-timesync 
 ```
-## 12.1.1 Change servers to our local time servers, then restart the service
+## 11.1.1 Change servers to our local time servers, then restart the service
 > sudo nano /etc/systemd/timesyncd.conf
+(ntp server -  is your domain controller server. To find domain controller IP execute the command bellow: 
+> grep "nameserver" /etc/resolv.conf
 ```
 [Time]
 NTP=0.arch.pool.ntp.org 1.arch.pool.ntp.org 2.arch.pool.ntp.org 3.arch.pool.ntp.org
 FallbackNTP=0.pool.ntp.org 1.pool.ntp.org 0.fr.pool.ntp.org
 ```
-## 12.1.2 Checking time settings
+## 11.1.2 Checking time settings
 ```
  timedatectl show-timesync --all
  timedatectl set-ntp true 
