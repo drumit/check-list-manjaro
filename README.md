@@ -442,12 +442,15 @@ sudo kill kdewallet
 also we can install seahorse package and, its can help to see this package and remove wallet from system
 
 ### 27.4(pacman compression)
-> sudo nano /etc/makepkg.conf
+```
+sudo nano /etc/makepkg.conf
+```
+
 Replacing
 ```
 compressxz=(xz -c -z - --threads=0)
 compressgz=(pigz -c -f -n)
-compressbz2=(pbzip2 -c -f)
+compressbz2=(bzip2 -c -f)
 compresszst=(zstd -c -z -q - --threads=0)
 ```
 ### 27.5 (swap+swapiness)
