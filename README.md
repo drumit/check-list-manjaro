@@ -64,7 +64,10 @@ In the menu that opens, select the kernel version LTS (5.4 for now), and boot fr
 Removing the newer kernel
 ```
 
-> sudo mhwd-kernel –r linux
+> sudo mhwd-kernel –r linux59 
+```
+Remove new kernel - linux59 for now, also we can install and remove kernels from GUI in menu "Kernel"
+```
 
 ## 9. Install system updates
 
