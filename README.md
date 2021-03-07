@@ -1,5 +1,6 @@
 # check-list-manjaro
-## Downloading  Manjaro Linux KDE Minimal
+## Downloading  Manjaro Linux KDE Minimal [1]
+## Downloading Rufus [2]
 
 # ATTENTION!  Do not work as root
 
@@ -11,7 +12,7 @@
 (hostname is compilation from 2 letters country name, + mac address pc)
 The MAC address you'll see in the console (F12) with command ip addr | grep -E ether
 ```
-### 2.3 Set timezone
+### 2.3 Set timezone [3]
 ```
 command in terminal tzselect
 ```
@@ -22,7 +23,7 @@ sudo systemctl status sshd
 sudo systemctl enable sshd
 ```
 
-## 4.	Adding the network certificate to the desktop (with help USB, or SCP, for Linux remote system, or WinSCP for Windows remote system)
+## 4.	Adding the network certificate to the desktop (with help USB, or SCP, for Linux remote system, or WinSCP for Windows remote system) 
 ```
 sudo cp certificatename.crt /etc/ca-certificates/trust-source/anchors/
 sudo trust extract-compat
@@ -53,7 +54,7 @@ cd awesome-linux-config/manjaro/basic/sysadmin
 cat checlist.md (and follow instructions)
 ```
  Reboot PC
-## 8. Downgrading the kernel version (sic!) to the current LTS version
+## 8. Downgrading the kernel version (sic!) to the current LTS version [4]
 
 > sudo mhwd-kernel –I linux54
 
@@ -467,6 +468,9 @@ compresszst=(zstd -c -z -q - --threads=0)
 ### 27.6 check the rules in PoliceKit pkg and Timeshift pkg.
 ### 27.7 When updating the OS, always make a timeshift slice, with cutoff date.
 ### 27.8 Required to use the UltraVNC client on the user's computer  (or Remmina in Linux)
-
-
+-----------------------------------------------------------------------------------------------
+[1] https://manjaro.org/downloads/official/kde/
+[2] https://github.com/pbatard/rufus/releases/download/v3.13/rufus-3.13.exe
+[3] https://man.archlinux.org/man/tzselect.8.en
+[4] https://wiki.manjaro.org/index.php/Manjaro_Kernels
 
