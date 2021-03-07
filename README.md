@@ -79,7 +79,7 @@ Remove new kernel - linux59 for now, also we can install and remove kernels from
 > sudo pacman -S  krb5 sssd usbguard pam-krb5
 
  Reboot PC
-## 11.	Checking current time && configuring time services on the system.
+## 11.	Checking current time && configuring time services on the system. [6]
 
 > timedatectl
  
@@ -112,7 +112,7 @@ FallbackNTP=1.pool.ntp.org
  timedatectl set-ntp true 
  timedatectl timesync-status
 ```
-### 12.2 Customization krb5 (change the default values to the required ones)
+### 12.2 Customization krb5 (change the default values to the required ones) [7]
 
 > sudo nano /etc/krb5.conf
 ```
@@ -160,7 +160,7 @@ FallbackNTP=1.pool.ntp.org
 	krb4_get_tickets = false
 	
 ```
-### 12.3 Customization sssd (change the default values to the required ones)
+### 12.3 Customization sssd (change the default values to the required ones) [8]
 
 > sudo nano /etc/sssd/sssd.conf 
 ```
@@ -218,18 +218,18 @@ FallbackNTP=1.pool.ntp.org
   default_shell = /bin/bash
   ldap_krb5_init_creds = true
 ```
-### 12.4 nsswitch
+### 12.4 nsswitch [9]
 > sudo nano /etc/nsswitch.conf 
 ```
 (In the first three parameters passwd, group, shadow add winbind after files separated by a space)
 ```
-### 12.5 Blocking USB 
+### 12.5 Blocking USB [10]
 ```
 sudo systemctl start usbguard
 sudo systemctl status usbguard
 sudo systemctl enable usbguard
 ```
-### 12.6 Customization samba (replace default values)
+### 12.6 Customization samba (replace default values) [11]
 > sudo nano /etc/samba/smb.conf 
 ```
 [global]
@@ -262,7 +262,7 @@ printcap name = /dev/null
 disable spoolss = yes
 ```
 Reboot PC
-## 13 Configuring the creation of a "profile" for each new user
+## 13 Configuring the creation of a "profile" for each new user [12]
 > sudo nano /etc/security/pam_winbind.conf
 ```
 debug=no
@@ -290,7 +290,7 @@ sudo systemctl status nmb
 sudo systemctl status winbind
 ```
 Reboot PC
-## 17 sudo nano /etc/pam.d/system-auth
+## 17 sudo nano /etc/pam.d/system-auth [13]
 ```
 #%PAM-1.0
 auth [success=1 default=ignore] pam_localuser.so
@@ -475,4 +475,13 @@ compresszst=(zstd -c -z -q - --threads=0)
 [3] https://man.archlinux.org/man/tzselect.8.en
 [4] https://wiki.manjaro.org/index.php/Manjaro_Kernels
 [5] https://wiki.archlinux.org/index.php/Active_Directory_integration
+[6] https://wiki.archlinux.org/index.php/systemd-timesyncd
+[7] https://wiki.archlinux.org/index.php/Kerberos
+[8] https://sssd.io/
+[9] https://man.archlinux.org/man/nsswitch.conf.5.en
+[10] https://wiki.archlinux.org/index.php/USBGuard
+[11] https://wiki.archlinux.org/index.php/samba
+[12] https://man.archlinux.org/man/pam_winbind.8.en
+[13] https://wiki.archlinux.org/index.php/PAM
+
 ```
