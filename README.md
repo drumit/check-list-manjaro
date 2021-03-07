@@ -10,7 +10,10 @@
 ```
 (hostname is compilation from 2 letters country name, + mac address pc)
 The MAC address you'll see in the console (F12) with command ip addr | grep -E ether
-Also choose a time zone (command in terminal tzselect)
+```
+### 2.3 Set timezone
+```
+command in terminal tzselect)
 ```
 ## 3.	Preparing remote access to the machine
 ```
