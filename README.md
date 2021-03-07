@@ -74,7 +74,7 @@ Remove new kernel - linux59 for now, also we can install and remove kernels from
 
 > yay -Syyuu --nodiffmenu --nocleanmenu --noconfirm
 
-## 10. Installing software for adding host to Active Directory domain
+## 10. Installing software for adding host to Active Directory domain [5]
 
 > sudo pacman -S  krb5 sssd usbguard pam-krb5
 
@@ -469,8 +469,10 @@ compresszst=(zstd -c -z -q - --threads=0)
 ### 27.7 When updating the OS, always make a timeshift slice, with cutoff date.
 ### 27.8 Required to use the UltraVNC client on the user's computer  (or Remmina in Linux)
 -----------------------------------------------------------------------------------------------
+```
 [1] https://manjaro.org/downloads/official/kde/
 [2] https://github.com/pbatard/rufus/releases/download/v3.13/rufus-3.13.exe
 [3] https://man.archlinux.org/man/tzselect.8.en
 [4] https://wiki.manjaro.org/index.php/Manjaro_Kernels
-
+[5] https://wiki.archlinux.org/index.php/Active_Directory_integration
+```
