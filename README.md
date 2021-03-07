@@ -13,7 +13,7 @@ The MAC address you'll see in the console (F12) with command ip addr | grep -E e
 ```
 ### 2.3 Set timezone
 ```
-command in terminal tzselect)
+command in terminal tzselect
 ```
 ## 3.	Preparing remote access to the machine
 ```
