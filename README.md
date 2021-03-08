@@ -475,6 +475,7 @@ compresszst=(zstd -c -z -q - --threads=0)
 [3] https://man.archlinux.org/man/tzselect.8.en
 [4] https://wiki.manjaro.org/index.php/Manjaro_Kernels
 [5] https://wiki.archlinux.org/index.php/Active_Directory_integration
+[5] https://www.redhat.com/sysadmin/linux-active-directory
 [6] https://wiki.archlinux.org/index.php/systemd-timesyncd
 [7] https://wiki.archlinux.org/index.php/Kerberos
 [8] https://sssd.io/
