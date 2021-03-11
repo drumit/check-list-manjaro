@@ -119,6 +119,7 @@ FallbackNTP=1.pool.ntp.org
 [appdefaults]
         encrypt = yes 
 [libdefaults]
+	allow_waek_crypto = false
 	default_realm = DOMAIN.COM
 	kdc_timesync = 1
 	ccache_type = 4
@@ -473,6 +474,9 @@ compresszst=(zstd -c -z -q - --threads=0)
 [5] https://www.redhat.com/sysadmin/linux-active-directory
 [6] https://wiki.archlinux.org/index.php/systemd-timesyncd
 [7] https://wiki.archlinux.org/index.php/Kerberos
+[7] https://docs.oracle.com/cd/E26502_01/html/E29042/krb5.conf-4.html
+[7] https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html#appdefaults
+
 [8] https://sssd.io/
 [9] https://man.archlinux.org/man/nsswitch.conf.5.en
 [10] https://wiki.archlinux.org/index.php/USBGuard
