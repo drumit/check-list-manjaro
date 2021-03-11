@@ -119,7 +119,6 @@ FallbackNTP=1.pool.ntp.org
 [appdefaults]
         encrypt = yes 
 [libdefaults]
-	allow_waek_crypto = false
 	default_realm = DOMAIN.COM
 	kdc_timesync = 1
 	ccache_type = 4
