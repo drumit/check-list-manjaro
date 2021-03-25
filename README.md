@@ -76,7 +76,7 @@ Remove new kernel - linux59 for now, also we can install and remove kernels from
 
 ## 10. Installing software for adding host to Active Directory domain [5]
 
-> sudo pacman -S  krb5 sssd usbguard pam-krb5
+> sudo pacman -S  krb5 usbguard pam-krb5
 
  Reboot PC
 ## 11.	Checking current time && configuring time services on the system. [6]
@@ -475,12 +475,10 @@ compresszst=(zstd -c -z -q - --threads=0)
 [7] https://wiki.archlinux.org/index.php/Kerberos
 [7] https://docs.oracle.com/cd/E26502_01/html/E29042/krb5.conf-4.html
 [7] https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html#appdefaults
-
-[8] https://sssd.io/
-[9] https://man.archlinux.org/man/nsswitch.conf.5.en
-[10] https://wiki.archlinux.org/index.php/USBGuard
-[11] https://wiki.archlinux.org/index.php/samba
-[12] https://man.archlinux.org/man/pam_winbind.8.en
-[13] https://wiki.archlinux.org/index.php/PAM
+[8] https://man.archlinux.org/man/nsswitch.conf.5.en
+[9] https://wiki.archlinux.org/index.php/USBGuard
+[10] https://wiki.archlinux.org/index.php/samba
+[11] https://man.archlinux.org/man/pam_winbind.8.en
+[12] https://wiki.archlinux.org/index.php/PAM
 
 ```
