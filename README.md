@@ -160,64 +160,7 @@ FallbackNTP=1.pool.ntp.org
 	krb4_get_tickets = false
 	
 ```
-### 12.3 Customization sssd (change the default values to the required ones) [8]
 
-> sudo nano /etc/sssd/sssd.conf 
-```
-[sssd]
-  default_domain_suffix = domain.com
-	domains = domain.com
-	config_file_version = 2
-	services = nss, pam
-[nss]
-	filter_users = root 
-	shell_fallback = /sbin/nologin 
-	fallback_homedir = /usr/share/smbusers/%u 
-	default_shell = /bin/sh
-  entry_negative_timeout = 0
-  debug_level = 3
-[pam]
-  debug_level = 3
- 
-[domain/domain.com]
-  debug_level = 3 
-	ad_domain = DOMAIN.COM 
-	krb5_realm = DOMAIN.COM
-  enumerate = false 
-	realmd_tags = manages-system joined-with-adcli 
-	cache_credentials = True 
-	id_provider = ad 
-	krb5_store_password_if_offline = True 
-	ldap_id_mapping = True 
-	use_fully_qualified_names = False 
-	fallback_homedir = /home/%d/%u 
-	access_provider = simple
-  auth_provider = ad 
-	selinux_provider = False 
-	ldap_referrals = false 
-	ad_server = DC.DOMAIN.COM 
-	ad_backup_server = DC1.DOMAIN.COM 
-	ldap_sasl_mech = GSSAPI 
-	ldap_schema = ad 
-	lookup_family_order = ipv4_only 
-	case_sensitive = false 
-	ldap_user_search_base = dc=domain,dc=com 
-	ldap_group_search_base = dc=domain,dc=com 
-	ldap_access_order = expire 
-	ldap_account_expire_policy = ad 
-	ldap_force_upper_case_realm = true 
-	krb5_canonicalize = false 
-	ldap_user_object_class = user 
-	ldap_user_name = sAMAccountName 
-	ldap_user_gecos = displayName 
-	ldap_user_principal = userPrincipalName 
-	ldap_user_modify_timestamp = whenChanged 
-	ldap_user_shadow_last_change = pwdLastSet 
-	ldap_user_shadow_expire = accountExpires
-	ldap_group_object_class = group
-  default_shell = /bin/bash
-  ldap_krb5_init_creds = true
-```
 ### 12.4 nsswitch [9]
 > sudo nano /etc/nsswitch.conf 
 ```
