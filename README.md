@@ -212,11 +212,7 @@ cached_login=yes
 silent=no
 mkhomedir=yes
 ```
-## 14	sudo nano /etc/conf.d/samba
-```
-SAMBA_DAEMONS=(smbd nmbd)
-SAMBA_DAEMONS=(smbd nmbd winbindd)
-```
+
 ## 15 sudo nano /etc/hosts
 We delete all references to IPv6 and write the fully qualified domain name of the machine + IPv4's address in the format.
 [127.0.0.1] [pc.domain.com pc]
