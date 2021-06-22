@@ -73,6 +73,7 @@ Remove new kernel - linux59 for now, also we can install and remove kernels from
 ## 9. Install system updates
 
 > yay -Syyuu --nodiffmenu --nocleanmenu --noconfirm
+> sudo systemctl enable fstrim.timer
 
 ## 10. Installing software for adding host to Active Directory domain [5]
 
